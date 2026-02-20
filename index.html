@@ -1153,10 +1153,8 @@ fbq('track', 'ViewContent', {
       precio:     '$' + parseInt(precio).toLocaleString('es-CO'),
       estado:     'Pendiente'
     });
-    fetch('https://script.google.com/macros/s/AKfycbwGhJb0JUa7P_8GkTU90towgAMHWDYbF-aryepJdPM5WOWmYWbn_2XA4XLvgzJWbMBs1A/exec?' + params.toString(), {
-      method: 'GET',
-      mode: 'no-cors'
-    }).catch(function(){});
+    var img = new Image();
+img.src = 'https://script.google.com/macros/s/AKfycbwGhJb0JUa7P_8GkTU90towgAMHWDYbF-aryepJdPM5WOWmYWbn_2XA4XLvgzJWbMBs1A/exec?' + params.toString();
 
     // Mostrar éxito después de 2s
     setTimeout(function() { mostrarExito(); }, 2000);
