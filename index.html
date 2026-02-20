@@ -15,9 +15,10 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '2937373643138468');
 fbq('track', 'PageView');
 fbq('track', 'ViewContent', {
-  content_name: 'NOVA Shampoo Cubre Canas',
-  currency:     'COP',
-  value:        89500
+  content_ids: ['NOVA-001'],
+  content_type: 'product',
+  currency: 'COP',
+  value: 89500
 });
 </script>
 <noscript>
@@ -26,7 +27,7 @@ fbq('track', 'ViewContent', {
 </noscript>
 <!-- FIN META PIXEL -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NOVA – Shampoo Cubre Canas | Cubre tus canas desde el 1er lavado</title>
+<title>NOVA – Color y Brillo Natural | Desde el 1er Lavado</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -153,7 +154,6 @@ fbq('track', 'ViewContent', {
   }
   .hero-sub strong { color: var(--white); }
 
-  /* ── HERO IMAGE: foto real del producto ── */
   .hero-image-wrap {
     position: relative;
     width: 100%;
@@ -266,18 +266,17 @@ fbq('track', 'ViewContent', {
   .trust-strip span em { color: var(--green); font-style: normal; }
 
   /* ======= SECCIONES IMAGEN COMPLETA ======= */
-  /* Cada sección de imagen ocupa el ancho completo, centrada */
   .img-section {
     width: 100%;
     background: #0a0a0a;
     display: flex;
     justify-content: center;
     padding: 0;
-    line-height: 0; /* elimina espacio debajo de img */
+    line-height: 0;
   }
   .img-section img {
     width: 100%;
-    max-width: 600px; /* ancho máximo para móvil/desktop */
+    max-width: 600px;
     height: auto;
     display: block;
   }
@@ -312,29 +311,14 @@ fbq('track', 'ViewContent', {
     margin-bottom: 16px;
   }
 
-  /* Móvil: forzado con !important */
   @media (max-width: 768px) {
-    .section-title {
-      font-size: 72px !important;
-      line-height: 1.0 !important;
-    }
-    .hero-headline {
-      font-size: 72px !important;
-      line-height: 0.95 !important;
-    }
-    .hero-sub {
-      font-size: 20px !important;
-    }
+    .section-title { font-size: 72px !important; line-height: 1.0 !important; }
+    .hero-headline { font-size: 72px !important; line-height: 0.95 !important; }
+    .hero-sub { font-size: 20px !important; }
   }
-
-  /* Desktop */
   @media (min-width: 769px) {
-    .section-title {
-      font-size: 120px !important;
-    }
-    .hero-headline {
-      font-size: 120px !important;
-    }
+    .section-title { font-size: 120px !important; }
+    .hero-headline { font-size: 120px !important; }
   }
   .reviews-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 52px; }
   @media(max-width:600px){
@@ -401,14 +385,10 @@ fbq('track', 'ViewContent', {
 
   /* ======= FAQ ======= */
   .pricing-section .section-title { font-size: 56px !important; text-align: center !important; }
-  @media(max-width:768px){
-    .pricing-section .section-title { font-size: 48px !important; }
-  }
+  @media(max-width:768px){ .pricing-section .section-title { font-size: 48px !important; } }
   .faq-section .section-title { font-size: 56px !important; text-align: center !important; }
   .faq-section .section-label { text-align: center !important; display: block !important; }
-  @media(max-width:768px){
-    .faq-section .section-title { font-size: 48px !important; text-align: center !important; }
-  }
+  @media(max-width:768px){ .faq-section .section-title { font-size: 48px !important; text-align: center !important; } }
   .faq-list { max-width: 680px; margin: 52px auto 0; display: flex; flex-direction: column; }
   .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
   .faq-q {
@@ -440,9 +420,8 @@ fbq('track', 'ViewContent', {
   }
   .final-cta .section-title { font-size: 56px !important; }
   .final-cta p { font-size: 15px !important; }
-  @media(max-width:768px){
-    .final-cta .section-title { font-size: 48px !important; }
-  }
+  @media(max-width:768px){ .final-cta .section-title { font-size: 48px !important; } }
+  .guarantee-strip {
     display: flex; align-items: center; justify-content: center; gap: 12px;
     margin: 28px auto; padding: 16px 28px;
     background: rgba(76,175,46,0.08); border: 1px solid rgba(76,175,46,0.25);
@@ -477,131 +456,66 @@ fbq('track', 'ViewContent', {
     position: relative;
     z-index: 1;
   }
-  /* Producto selector */
-  .producto-selector {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
+  .producto-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
   .producto-opt {
-    border: 2px solid rgba(76,175,46,0.25);
-    border-radius: 12px;
-    padding: 14px 10px;
-    cursor: pointer;
-    transition: all 0.25s;
-    background: rgba(255,255,255,0.03);
-    text-align: center;
+    border: 2px solid rgba(76,175,46,0.25); border-radius: 12px; padding: 14px 10px;
+    cursor: pointer; transition: all 0.25s; background: rgba(255,255,255,0.03); text-align: center;
   }
-  .producto-opt.selected {
-    border-color: var(--green);
-    background: rgba(76,175,46,0.12);
-  }
+  .producto-opt.selected { border-color: var(--green); background: rgba(76,175,46,0.12); }
   .producto-opt .p-emoji { font-size: 22px; margin-bottom: 4px; }
   .producto-opt .p-name { font-size: 12px; font-weight: 800; color: var(--white); line-height: 1.3; }
   .producto-opt .p-price { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--green); margin-top: 4px; }
   .producto-opt.selected .p-name { color: var(--green); }
 
-  /* Input fields */
   .form-group { margin-bottom: 14px; text-align: left; }
   .form-group label {
-    display: block;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    margin-bottom: 6px;
+    display: block; font-size: 11px; font-weight: 800; letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 6px;
   }
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--white);
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
-    appearance: none;
+  .form-group input, .form-group select {
+    width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px; padding: 14px 16px; font-size: 15px;
+    font-family: 'Montserrat', sans-serif; color: var(--white); outline: none;
+    transition: border-color 0.2s; -webkit-appearance: none; appearance: none;
   }
-  .form-group input:focus,
-  .form-group select:focus { border-color: var(--green); }
+  .form-group input:focus, .form-group select:focus { border-color: var(--green); }
   .form-group input::placeholder { color: rgba(255,255,255,0.3); }
   .form-group select option { background: #1a1a1a; color: var(--white); }
-
-  /* Select arrow */
   .select-wrap { position: relative; }
   .select-wrap::after {
-    content: '▼';
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 10px;
-    color: var(--green);
-    pointer-events: none;
+    content: '▼'; position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    font-size: 10px; color: var(--green); pointer-events: none;
   }
-
-  /* Submit button */
   .btn-submit {
     display: block; width: 100%;
     background: linear-gradient(135deg, #4caf2e 0%, #6ee84a 50%, #4caf2e 100%);
     background-size: 200% 200%;
-    color: var(--black); font-weight: 900; font-size: 17px;
-    letter-spacing: 1px; text-transform: uppercase;
-    padding: 20px; border-radius: 12px; border: none;
-    cursor: pointer; transition: all 0.3s;
-    animation: shimmer 3s linear infinite;
-    box-shadow: 0 8px 32px rgba(76,175,46,0.4);
-    margin-top: 8px;
+    color: var(--black); font-weight: 900; font-size: 17px; letter-spacing: 1px;
+    text-transform: uppercase; padding: 20px; border-radius: 12px; border: none;
+    cursor: pointer; transition: all 0.3s; animation: shimmer 3s linear infinite;
+    box-shadow: 0 8px 32px rgba(76,175,46,0.4); margin-top: 8px;
   }
   .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(76,175,46,0.6); }
   .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-
-  /* Form trust */
   .form-trust {
     display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
-    margin-top: 16px; font-size: 11px; font-weight: 700;
-    color: rgba(255,255,255,0.4);
+    margin-top: 16px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.4);
   }
   .form-trust span { display: flex; align-items: center; gap: 4px; }
-
-  /* Success state */
-  .form-success {
-    display: none;
-    text-align: center;
-    padding: 20px;
-  }
+  .form-success { display: none; text-align: center; padding: 20px; }
   .form-success .success-icon { font-size: 56px; margin-bottom: 16px; }
-  .form-success h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 36px; color: var(--green); margin-bottom: 8px;
-  }
+  .form-success h3 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--green); margin-bottom: 8px; }
   .form-success p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; }
-
-  /* Form label top */
-  .form-section-label {
-    font-size: 11px; letter-spacing: 4px; font-weight: 800;
-    color: var(--green); text-transform: uppercase; margin-bottom: 12px; display: block;
-  }
-  .form-section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px !important;
-    line-height: 1.0;
-    margin-bottom: 8px;
-  }
-  .form-section-sub {
-    font-size: 15px; color: rgba(255,255,255,0.6); max-width: 400px; margin: 0 auto;
-  }
+  .form-section-label { font-size: 11px; letter-spacing: 4px; font-weight: 800; color: var(--green); text-transform: uppercase; margin-bottom: 12px; display: block; }
+  .form-section-title { font-family: 'Bebas Neue', sans-serif; font-size: 56px !important; line-height: 1.0; margin-bottom: 8px; }
+  .form-section-sub { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 400px; margin: 0 auto; }
   @media(max-width:768px){
     .form-section-title { font-size: 48px !important; }
     .form-wrap { padding: 24px 16px; }
     .producto-selector { grid-template-columns: 1fr 1fr; }
   }
+
+  footer {
     padding: 32px 20px; text-align: center;
     font-size: 12px; color: rgba(255,255,255,0.3);
     border-top: 1px solid rgba(255,255,255,0.05);
@@ -653,27 +567,26 @@ fbq('track', 'ViewContent', {
 
   <div class="social-proof-pill">
     <span class="dot"></span>
-    +2.400 personas ya cubrieron sus canas con NOVA
+    +2.400 personas ya renovaron su cabello con NOVA
   </div>
 
   <p class="hero-eyebrow">El shampoo que está cambiando todo</p>
 
   <h1 class="hero-headline">
-    Cubre tus<br>
-    <span class="accent">canas</span> sin<br>
-    <span class="outline">maltratar</span><br>
-    tu cabello
+    Devuelve el<br>
+    <span class="accent">color</span> y<br>
+    <span class="outline">brillo</span><br>
+    a tu cabello
   </h1>
 
   <p class="hero-sub">
     Renueva tu color <strong>desde casa en minutos</strong> con extractos naturales y máxima cobertura. <strong>Desde el primer lavado.</strong>
   </p>
 
-  <!-- IMAGEN HERO REAL (pareja + productos) -->
   <div class="hero-image-wrap">
     <img
       src="https://cdn.shopify.com/s/files/1/0978/4475/6759/files/Sin_titulo_753_x_1350_px_753_x_1079_px_602_x_1079_px_602_x_876_px.png?v=1771552324"
-      alt="NOVA Shampoo Cubre Canas – Resultado real desde el primer lavado"
+      alt="NOVA Shampoo – Resultado real desde el primer lavado"
     />
   </div>
 
@@ -721,8 +634,7 @@ fbq('track', 'ViewContent', {
   </div>
 </section>
 
-<!-- ===================== IMAGEN: PROBLEMA / PUBLICIDAD ===================== -->
-<!-- Reemplaza la sección problema/solución con imagen de campaña -->
+<!-- ===================== IMAGEN CAMPAÑA ===================== -->
 <div class="img-section reveal">
   <img
     src="https://cdn.shopify.com/s/files/1/0978/4475/6759/files/freepik__usa-imagen-img1-ultrarealistic-dark-advertising-ba__43068.png?v=1771456271"
@@ -754,7 +666,7 @@ fbq('track', 'ViewContent', {
   </div>
 </div>
 
-<!-- ===================== IMAGEN: CÓMO FUNCIONA (3 pasos) ===================== -->
+<!-- ===================== IMAGEN: CÓMO FUNCIONA ===================== -->
 <div class="img-section reveal">
   <img
     src="https://cdn.shopify.com/s/files/1/0978/4475/6759/files/Sin_titulo_753_x_1350_px_753_x_1079_px.png?v=1771458763"
@@ -762,11 +674,11 @@ fbq('track', 'ViewContent', {
   />
 </div>
 
-<!-- ===================== IMAGEN: POR QUÉ NOVA (beneficios) ===================== -->
+<!-- ===================== IMAGEN: POR QUÉ NOVA ===================== -->
 <div class="img-section reveal">
   <img
     src="https://cdn.shopify.com/s/files/1/0978/4475/6759/files/Sin_titulo_753_x_1350_px_1.png?v=1771459771"
-    alt="NOVA – Por qué NOVA: beneficios reales"
+    alt="NOVA – Beneficios reales"
   />
 </div>
 
@@ -779,7 +691,7 @@ fbq('track', 'ViewContent', {
     <div class="reviews-wrap">
       <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p class="review-text">"Llevo 3 semanas usando el kit y mis canas desaparecieron. Lo mejor es que mi cabello se siente increíblemente suave, no dañado como con las tinturas normales. ¡Seguiré comprando!"</p>
+        <p class="review-text">"Llevo 3 semanas usando el kit y mi cabello luce increíble. Lo mejor es que se siente muy suave, nada comparado con las tinturas normales. ¡Seguiré comprando!"</p>
         <div class="reviewer">
           <div class="reviewer-avatar">M</div>
           <div class="reviewer-info">
@@ -790,7 +702,7 @@ fbq('track', 'ViewContent', {
       </div>
       <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p class="review-text">"Soy hombre y tenía mucha desconfianza. Lo probé y ¡wow! Desde el segundo lavado noté la diferencia. Mis canas quedaron cubiertas sin que se vea artificial. Lo recomiendo totalmente."</p>
+        <p class="review-text">"Soy hombre y tenía mucha desconfianza. Lo probé y ¡wow! Desde el segundo lavado noté la diferencia. Mi cabello quedó con un color natural y uniforme. Lo recomiendo totalmente."</p>
         <div class="reviewer">
           <div class="reviewer-avatar">J</div>
           <div class="reviewer-info">
@@ -801,7 +713,7 @@ fbq('track', 'ViewContent', {
       </div>
       <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p class="review-text">"El pago contra entrega me dio confianza para pedirlo. Llegó rápido y el resultado superó mis expectativas. La mascarilla es deliciosa, deja el cabello como de salón. ¡5 estrellas merecidas!"</p>
+        <p class="review-text">"El pago contra entrega me dio confianza para pedirlo. Llegó rápido y el resultado superó mis expectativas. La mascarilla deja el cabello como de salón. ¡5 estrellas merecidas!"</p>
         <div class="reviewer">
           <div class="reviewer-avatar">C</div>
           <div class="reviewer-info">
@@ -818,16 +730,16 @@ fbq('track', 'ViewContent', {
 <section class="pricing-section" id="pricing">
   <div class="container">
     <p class="section-label reveal">Elige tu opción</p>
-    <h2 class="section-title reveal">Invierte en tu<br><span style="color:var(--green)">confianza</span></h2>
+    <h2 class="section-title reveal">Invierte en tu<br><span style="color:var(--green)">imagen</span></h2>
     <p class="reveal" style="color:rgba(255,255,255,0.6);font-size:15px;margin:0 auto;">Envío gratis y pago contra entrega en ambas opciones.</p>
 
     <div class="pricing-cards">
       <div class="pricing-card reveal">
         <p class="card-name">Solo el Shampoo</p>
-        <p class="card-title">Shampoo Cubre Canas</p>
+        <p class="card-title">Shampoo Color NOVA</p>
         <div class="card-price"><sup>$</sup>69.500</div>
         <ul class="card-perks">
-          <li>NOVA Shampoo Cubre Canas 375ml</li>
+          <li>NOVA Shampoo 375ml</li>
           <li>Máxima cobertura desde el 1er lavado</li>
           <li>3 tonos disponibles</li>
           <li>Con extractos naturales</li>
@@ -843,7 +755,7 @@ fbq('track', 'ViewContent', {
         <p class="card-title">Shampoo + Mascarilla</p>
         <div class="card-price"><sup>$</sup>89.500</div>
         <ul class="card-perks">
-          <li>NOVA Shampoo Cubre Canas 375ml</li>
+          <li>NOVA Shampoo 375ml</li>
           <li>NOVA Mascarilla Nutritiva 200ml</li>
           <li>Resultados 2x más rápidos</li>
           <li>Cabello nutrido y brillante</li>
@@ -865,17 +777,13 @@ fbq('track', 'ViewContent', {
 
   <div class="form-wrap reveal">
 
-    <!-- ESTADO ÉXITO -->
     <div class="form-success" id="formSuccess">
       <div class="success-icon">🎉</div>
       <h3>¡Pedido recibido!</h3>
       <p>Gracias, en breve te contactamos por WhatsApp para confirmar tu pedido y coordinar la entrega.</p>
     </div>
 
-    <!-- FORMULARIO -->
     <div id="formBody">
-
-      <!-- PASO 1: Elige producto -->
       <p style="font-size:12px;font-weight:800;letter-spacing:1.5px;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;text-align:left;">¿Qué quieres pedir?</p>
       <div class="producto-selector" id="productoSelector">
         <div class="producto-opt selected" onclick="selectProducto(this, 'Kit Completo – Shampoo + Mascarilla', '89500')">
@@ -883,77 +791,50 @@ fbq('track', 'ViewContent', {
           <div class="p-name">Kit Completo<br>Shampoo + Mascarilla</div>
           <div class="p-price">$89.500</div>
         </div>
-        <div class="producto-opt" onclick="selectProducto(this, 'Solo Shampoo Cubre Canas', '69500')">
+        <div class="producto-opt" onclick="selectProducto(this, 'Solo Shampoo NOVA', '69500')">
           <div class="p-emoji">🧴</div>
-          <div class="p-name">Solo Shampoo<br>Cubre Canas</div>
+          <div class="p-name">Solo Shampoo<br>NOVA Color</div>
           <div class="p-price">$69.500</div>
         </div>
       </div>
 
-      <!-- CAMPOS -->
       <div class="form-group">
         <label>Nombre y Apellido</label>
         <input type="text" id="f_nombre" placeholder="Ej: Carlos Ramírez" autocomplete="name" />
       </div>
-
       <div class="form-group">
         <label>Celular WhatsApp</label>
         <input type="tel" id="f_celular" placeholder="Ej: 3001234567" autocomplete="tel" inputmode="numeric" />
       </div>
-
       <div class="form-group">
         <label>Departamento</label>
         <div class="select-wrap">
           <select id="f_ciudad">
             <option value="">— Selecciona tu departamento —</option>
-            <option>Amazonas</option>
-            <option>Antioquia</option>
-            <option>Arauca</option>
-            <option>Atlántico</option>
-            <option>Bolívar</option>
-            <option>Boyacá</option>
-            <option>Caldas</option>
-            <option>Caquetá</option>
-            <option>Casanare</option>
-            <option>Cauca</option>
-            <option>Cesar</option>
-            <option>Chocó</option>
-            <option>Córdoba</option>
-            <option>Cundinamarca</option>
-            <option>Guainía</option>
-            <option>Guaviare</option>
-            <option>Huila</option>
-            <option>La Guajira</option>
-            <option>Magdalena</option>
-            <option>Meta</option>
-            <option>Nariño</option>
-            <option>Norte de Santander</option>
-            <option>Putumayo</option>
-            <option>Quindío</option>
-            <option>Risaralda</option>
-            <option>San Andrés y Providencia</option>
-            <option>Santander</option>
-            <option>Sucre</option>
-            <option>Tolima</option>
-            <option>Valle del Cauca</option>
-            <option>Vaupés</option>
-            <option>Vichada</option>
+            <option>Amazonas</option><option>Antioquia</option><option>Arauca</option>
+            <option>Atlántico</option><option>Bolívar</option><option>Boyacá</option>
+            <option>Caldas</option><option>Caquetá</option><option>Casanare</option>
+            <option>Cauca</option><option>Cesar</option><option>Chocó</option>
+            <option>Córdoba</option><option>Cundinamarca</option><option>Guainía</option>
+            <option>Guaviare</option><option>Huila</option><option>La Guajira</option>
+            <option>Magdalena</option><option>Meta</option><option>Nariño</option>
+            <option>Norte de Santander</option><option>Putumayo</option><option>Quindío</option>
+            <option>Risaralda</option><option>San Andrés y Providencia</option>
+            <option>Santander</option><option>Sucre</option><option>Tolima</option>
+            <option>Valle del Cauca</option><option>Vaupés</option><option>Vichada</option>
             <option>Bogotá D.C.</option>
           </select>
         </div>
       </div>
-
       <div class="form-group">
         <label>Ciudad o Municipio</label>
         <input type="text" id="f_municipio" placeholder="Ej: Medellín, Bello, Itagüí..." autocomplete="address-level2" />
       </div>
-
       <div class="form-group">
         <label>Dirección de entrega</label>
         <input type="text" id="f_direccion" placeholder="Ej: Cra 15 #32-10, Apto 201" autocomplete="street-address" />
       </div>
 
-      <!-- INPUT OCULTO producto -->
       <input type="hidden" id="f_producto" value="Kit Completo – Shampoo + Mascarilla" />
       <input type="hidden" id="f_precio" value="89500" />
 
@@ -967,7 +848,6 @@ fbq('track', 'ViewContent', {
         <span>🚚 Envío gratis</span>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -980,7 +860,7 @@ fbq('track', 'ViewContent', {
     <div class="faq-list">
       <div class="faq-item reveal">
         <div class="faq-q" onclick="toggleFaq(this)">¿Desde cuándo veré resultados?<span class="faq-arrow">+</span></div>
-        <p class="faq-a">La mayoría de nuestros clientes notan cobertura visible desde el primer o segundo lavado. Para un resultado completo y uniforme, recomendamos usarlo de manera consistente durante las primeras dos semanas.</p>
+        <p class="faq-a">La mayoría de nuestros clientes notan una diferencia visible desde el primer o segundo lavado. Para un resultado completo y uniforme, recomendamos usarlo de manera consistente durante las primeras dos semanas.</p>
       </div>
       <div class="faq-item reveal">
         <div class="faq-q" onclick="toggleFaq(this)">¿Es seguro para cabello tratado o teñido?<span class="faq-arrow">+</span></div>
@@ -1006,7 +886,7 @@ fbq('track', 'ViewContent', {
 <section class="final-cta">
   <p class="section-label reveal">No esperes más</p>
   <h2 class="section-title reveal">Tu cabello<br>te lo <span style="color:var(--green)">agradecerá</span></h2>
-  <p class="reveal" style="color:rgba(255,255,255,0.6);font-size:15px;margin:0 auto 32px;max-width:480px;">+2.400 personas ya transformaron sus canas con NOVA. Hoy es tu turno.</p>
+  <p class="reveal" style="color:rgba(255,255,255,0.6);font-size:15px;margin:0 auto 32px;max-width:480px;">+2.400 personas ya transformaron su cabello con NOVA. Hoy es tu turno.</p>
 
   <div class="guarantee-strip reveal">
     <span class="guarantee-icon">🛡️</span>
@@ -1025,8 +905,8 @@ fbq('track', 'ViewContent', {
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 NOVA Cubre Canas. Todos los derechos reservados.</p>
-  <p style="margin-top:6px;">Los resultados pueden variar. Para uso externo. No ingerir.</p>
+  <p>© 2025 NOVA. Todos los derechos reservados.</p>
+  <p style="margin-top:6px;">Para uso externo. No ingerir. Los resultados individuales pueden variar.</p>
 </footer>
 
 <!-- STICKY BAR -->
@@ -1040,16 +920,8 @@ fbq('track', 'ViewContent', {
 </div>
 
 <script>
-  // =============================================
-  // GOOGLE SHEETS URL
-  // Reemplaza esta URL con la que obtengas de
-  // tu Google Apps Script al publicarlo
-  // =============================================
   var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzmPBw-9JKYFj3TNZvEedYjooJfdbsUwDS8yDQLbRNrnfHyB4u5x4JYLjIRcEP_m8la/exec';
 
-  // =============================================
-  // SELECCIONAR PRODUCTO
-  // =============================================
   function selectProducto(el, nombre, precio) {
     document.querySelectorAll('.producto-opt').forEach(function(o){ o.classList.remove('selected'); });
     el.classList.add('selected');
@@ -1057,9 +929,6 @@ fbq('track', 'ViewContent', {
     document.getElementById('f_precio').value = precio;
   }
 
-  // =============================================
-  // ENVIAR PEDIDO A GOOGLE SHEETS
-  // =============================================
   function enviarPedido() {
     var nombre    = document.getElementById('f_nombre').value.trim();
     var celular   = document.getElementById('f_celular').value.trim();
@@ -1069,24 +938,18 @@ fbq('track', 'ViewContent', {
     var producto  = document.getElementById('f_producto').value;
     var precio    = document.getElementById('f_precio').value;
 
-    // Validación
     if (!nombre)    { alert('Por favor ingresa tu nombre y apellido.'); return; }
     if (!celular || celular.length < 7) { alert('Por favor ingresa tu celular WhatsApp.'); return; }
     if (!ciudad)    { alert('Por favor selecciona tu departamento.'); return; }
     if (!municipio) { alert('Por favor ingresa tu ciudad o municipio.'); return; }
     if (!direccion) { alert('Por favor ingresa tu dirección de entrega.'); return; }
 
-    // Bloquear botón
     var btn = document.getElementById('btnSubmit');
     btn.disabled = true;
     btn.textContent = 'Enviando pedido...';
 
-    // Fecha y hora
     var ahora = new Date();
     var fecha = ahora.toLocaleDateString('es-CO') + ' ' + ahora.toLocaleTimeString('es-CO');
-
-    // Enviar a Google Sheets via iframe (funciona en móvil y PC sin CORS)
-    // Generar links de WhatsApp
     var celularLimpio = '57' + celular.replace(/\D/g,'');
     var ciudadCompleta = ciudad + ' - ' + municipio;
 
@@ -1136,56 +999,31 @@ fbq('track', 'ViewContent', {
       '----------------------------------------'
     );
 
-    // Web3Forms → Gmail con datos + links WhatsApp
-    fetch('https://api.web3forms.com/submit', {
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData }).catch(function(){});
+
+    fetch('https://hook.us2.make.com/8gfs57fule0jbzuen4nh1gnla69z2twc', {
       method: 'POST',
-      body: formData
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fecha: fecha, nombre: nombre, celular: celular,
+        ciudad: ciudadCompleta, direccion: direccion,
+        producto: producto, precio: '$' + parseInt(precio).toLocaleString('es-CO'),
+        estado: 'Pendiente'
+      })
     }).catch(function(){});
 
-    // Apps Script → Google Sheets (respaldo)
-    var params = new URLSearchParams({
-      fecha:      fecha,
-      nombre:     nombre,
-      celular:    celular,
-      ciudad:     ciudadCompleta,
-      direccion:  direccion,
-      producto:   producto,
-      precio:     '$' + parseInt(precio).toLocaleString('es-CO'),
-      estado:     'Pendiente'
-    });
-    fetch('https://hook.us2.make.com/8gfs57fule0jbzuen4nh1gnla69z2twc', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    fecha:     fecha,
-    nombre:    nombre,
-    celular:   celular,
-    ciudad:    ciudadCompleta,
-    direccion: direccion,
-    producto:  producto,
-    precio:    '$' + parseInt(precio).toLocaleString('es-CO'),
-    estado:    'Pendiente'
-       })
-});
-    
-
-
-    // Mostrar éxito después de 2s
     setTimeout(function() { mostrarExito(); }, 2000);
   }
 
   function mostrarExito() {
-    // =============================================
-    // META PIXEL – EVENTO PURCHASE
-    // Se dispara cuando el cliente envía el pedido
-    // =============================================
+    // META PIXEL – PURCHASE: usa content_id genérico, sin términos de salud
     try {
       var precio   = document.getElementById('f_precio').value;
-      var producto = document.getElementById('f_producto').value;
+      var prodId   = document.getElementById('f_precio').value === '89500' ? 'NOVA-002' : 'NOVA-001';
       fbq('track', 'Purchase', {
         value:        parseFloat(precio),
         currency:     'COP',
-        content_name: producto,
+        content_ids:  [prodId],
         content_type: 'product'
       });
     } catch(err) {}
@@ -1195,19 +1033,11 @@ fbq('track', 'ViewContent', {
     document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  // =============================================
-  // TODOS LOS BOTONES CTA → scroll al formulario
-  // =============================================
   function pedirAhora() {
     var form = document.getElementById('order');
-    if (form) {
-      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (form) { form.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   }
 
-  // =============================================
-  // FAQ toggle
-  // =============================================
   function toggleFaq(el) {
     var item = el.parentElement;
     var isOpen = item.classList.contains('open');
@@ -1215,25 +1045,16 @@ fbq('track', 'ViewContent', {
     if (!isOpen) item.classList.add('open');
   }
 
-  // =============================================
-  // Color selector hero
-  // =============================================
   function selectColor(el) {
     document.querySelectorAll('.color-opt').forEach(function(o){ o.classList.remove('active'); });
     el.classList.add('active');
   }
 
-  // =============================================
-  // Scroll reveal
-  // =============================================
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
 
-  // =============================================
-  // Sticky bar
-  // =============================================
   var sticky = document.getElementById('stickyBar');
   window.addEventListener('scroll', function(){
     sticky.classList.toggle('visible', window.scrollY > 600);
