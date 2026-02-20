@@ -1098,18 +1098,30 @@ fbq('track', 'ViewContent', {
     formData.append('precio',     '$' + parseInt(precio).toLocaleString('es-CO'));
     formData.append('estado',     'Pendiente');
 
-    // Web3Forms – gratis, sin restricciones de dominio
+    // LLAMADA 1: Web3Forms → Gmail confiable en todos los dispositivos
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       body: formData
-    })
-    .then(function(response) { return response.json(); })
-    .then(function(data) {
-      mostrarExito();
-    })
-    .catch(function() {
-      mostrarExito();
+    }).catch(function(){});
+
+    // LLAMADA 2: Apps Script → Google Sheets + links WhatsApp
+    var params = new URLSearchParams({
+      fecha:      fecha,
+      nombre:     nombre,
+      celular:    celular,
+      ciudad:     ciudad + ' - ' + municipio,
+      direccion:  direccion,
+      producto:   producto,
+      precio:     '$' + parseInt(precio).toLocaleString('es-CO'),
+      estado:     'Pendiente'
     });
+    fetch('https://script.google.com/macros/s/AKfycbzmPBw-9JKYFj3TNZvEedYjooJfdbsUwDS8yDQLbRNrnfHyB4u5x4JYLjIRcEP_m8la/exec?' + params.toString(), {
+      method: 'GET',
+      mode: 'no-cors'
+    }).catch(function(){});
+
+    // Mostrar éxito después de 2s
+    setTimeout(function() { mostrarExito(); }, 2000);
   }
 
   function mostrarExito() {
