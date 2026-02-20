@@ -1085,19 +1085,7 @@ fbq('track', 'ViewContent', {
     var ahora = new Date();
     var fecha = ahora.toLocaleDateString('es-CO') + ' ' + ahora.toLocaleTimeString('es-CO');
 
-    // Datos a enviar
-    var datos = {
-      fecha:     fecha,
-      nombre:    nombre,
-      celular:   celular,
-      ciudad:    ciudad,
-      direccion: direccion,
-      producto:  producto,
-      precio:    '$' + parseInt(precio).toLocaleString('es-CO'),
-      estado:    'Pendiente'
-    };
-
-    // Enviar a Google Sheets via GET (más confiable con Apps Script)
+    // Enviar a Google Sheets via iframe (funciona en móvil y PC sin CORS)
     var params = new URLSearchParams({
       fecha:      fecha,
       nombre:     nombre,
@@ -1109,7 +1097,6 @@ fbq('track', 'ViewContent', {
       estado:     'Pendiente'
     });
 
-    // Envío via iframe oculto (funciona en móvil y PC sin CORS)
     var iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.src = SHEETS_URL + '?' + params.toString();
