@@ -1102,17 +1102,22 @@ fbq('track', 'ViewContent', {
       fecha:      fecha,
       nombre:     nombre,
       celular:    celular,
-      ciudad:     ciudad + ' – ' + municipio,
+      ciudad:     ciudad + ' - ' + municipio,
       direccion:  direccion,
       producto:   producto,
       precio:     '$' + parseInt(precio).toLocaleString('es-CO'),
       estado:     'Pendiente'
     });
 
-    var img = new Image();
-    img.src = SHEETS_URL + '?' + params.toString();
-    img.onload  = function() { mostrarExito(); };
-    img.onerror = function() { mostrarExito(); };
+    // Envío via iframe oculto (funciona en móvil y PC sin CORS)
+    var iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = SHEETS_URL + '?' + params.toString();
+    document.body.appendChild(iframe);
+    setTimeout(function() {
+      mostrarExito();
+      document.body.removeChild(iframe);
+    }, 2000);
   }
 
   function mostrarExito() {
