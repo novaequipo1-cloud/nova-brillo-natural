@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA – Shampoo Cubre Canas | Cubre tus canas desde el 1er lavado</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --green: #4caf2e;
+    --green-glow: #6ee84a;
+    --green-dark: #2d7a1a;
+    --white: #ffffff;
+    --gold: #d4a843;
+    --gray: #888;
+    --border: rgba(76,175,46,0.3);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ======= ANNOUNCEMENT BAR ======= */
+  .topbar {
+    background: var(--green);
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    animation: pulse-bar 2s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  @keyframes pulse-bar {
+    0%,100%{background:var(--green);}
+    50%{background:var(--green-dark);}
+  }
+  .topbar span { color: var(--black); display: flex; align-items: center; gap: 6px; }
+  .topbar strong { color: var(--black); text-decoration: none !important; font-weight: 900; }
+  .topbar .sep { color: rgba(0,0,0,0.35); font-weight: 300; font-size: 18px; }
+  @media(max-width:480px){
+    .topbar { gap: 10px; font-size: 12px; padding: 10px 12px; }
+  }
+
+  /* ======= HERO ======= */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 60px 20px 80px;
+    background: #0a0f0a;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(76,175,46,0.12) 0%, transparent 70%);
+    z-index: 0;
+  }
+  .hero > * { position: relative; z-index: 1; }
+
+  .social-proof-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(76,175,46,0.15);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--green-glow);
+    margin-bottom: 28px;
+    animation: fadeInDown 0.6s ease both;
+  }
+  .social-proof-pill .dot {
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: blink 1.4s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 800;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    animation: fadeInDown 0.7s ease both 0.1s;
+  }
+
+  .hero-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px !important;
+    line-height: 0.95 !important;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.7s ease both 0.2s;
+  }
+  .hero-headline .accent { color: var(--green); }
+  .hero-headline .outline {
+    -webkit-text-stroke: 2px var(--white);
+    color: transparent;
+  }
+
+  .hero-sub {
+    font-size: clamp(15px, 2.5vw, 19px);
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+    max-width: 540px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.7s ease both 0.3s;
+  }
+  .hero-sub strong { color: var(--white); }
+
+  /* ── HERO IMAGE: foto real del producto ── */
+  .hero-image-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto 40px;
+    animation: fadeInUp 0.8s ease both 0.4s;
+  }
+  .hero-image-wrap img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 60px rgba(76,175,46,0.4));
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+  }
+
+  .badges-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.7s ease both 0.5s;
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .badge .icon { font-size: 18px; }
+
+  /* ── COLOR SELECTOR ── */
+  .color-section {
+    padding: 20px 20px 0;
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+    animation: fadeInUp 0.7s ease both 0.55s;
+  }
+  .color-label { font-size: 13px; color: var(--gray); font-weight: 700; margin-bottom: 12px; letter-spacing: 1px; }
+  .color-opts { display: flex; justify-content: center; gap: 16px; }
+  .color-opt {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    cursor: pointer; opacity: 0.6; transition: opacity 0.2s;
+  }
+  .color-opt.active { opacity: 1; }
+  .color-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent; }
+  .color-opt.active .color-dot { border-color: var(--green); box-shadow: 0 0 0 3px rgba(76,175,46,0.3); }
+  .color-opt span { font-size: 11px; font-weight: 700; }
+
+  /* ── CTA BLOCK ── */
+  .cta-block {
+    animation: fadeInUp 0.7s ease both 0.6s;
+    width: 100%;
+    max-width: 480px;
+    margin: 32px auto 0;
+  }
+  .price-tag { margin-bottom: 16px; }
+  .price-label { font-size: 12px; letter-spacing: 2px; color: var(--gray); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+  .price-main { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: var(--white); line-height: 1; }
+  .price-main .currency { font-size: 36px; vertical-align: top; margin-top: 8px; display: inline-block; }
+  .price-desc { font-size: 13px; color: var(--gray); margin-top: 4px; }
+  .price-desc strong { color: var(--green); }
+
+  .btn-primary {
+    display: block; width: 100%;
+    background: linear-gradient(135deg, #4caf2e 0%, #6ee84a 50%, #4caf2e 100%);
+    background-size: 200% 200%;
+    color: var(--black); font-weight: 900; font-size: 18px;
+    letter-spacing: 1px; text-transform: uppercase; text-decoration: none;
+    padding: 20px 32px; border-radius: 12px; border: none; cursor: pointer;
+    transition: all 0.3s; animation: shimmer 3s linear infinite;
+    box-shadow: 0 8px 40px rgba(76,175,46,0.45);
+    position: relative; overflow: hidden;
+  }
+  @keyframes shimmer {
+    0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}
+  }
+  .btn-primary::after {
+    content:''; position:absolute; top:-50%; left:-75%; width:50%; height:200%;
+    background:rgba(255,255,255,0.2); transform:skewX(-20deg);
+    animation: shine 3s infinite 1.5s;
+  }
+  @keyframes shine { 0%{left:-75%;} 100%{left:125%;} }
+  .btn-primary:hover { transform:translateY(-3px); box-shadow:0 14px 50px rgba(76,175,46,0.6); }
+  .btn-arrow { font-size: 20px; margin-left: 8px; }
+
+  .btn-secondary {
+    display: block; width: 100%; background: transparent; color: var(--white);
+    font-weight: 700; font-size: 14px; text-decoration: none;
+    padding: 14px 32px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer; transition: all 0.3s; margin-top: 12px; text-align: center;
+  }
+  .btn-secondary:hover { border-color: var(--green); color: var(--green); }
+
+  .trust-strip {
+    display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+    margin-top: 20px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5);
+  }
+  .trust-strip span { display: flex; align-items: center; gap: 5px; }
+  .trust-strip span em { color: var(--green); font-style: normal; }
+
+  /* ======= SECCIONES IMAGEN COMPLETA ======= */
+  /* Cada sección de imagen ocupa el ancho completo, centrada */
+  .img-section {
+    width: 100%;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    line-height: 0; /* elimina espacio debajo de img */
+  }
+  .img-section img {
+    width: 100%;
+    max-width: 600px; /* ancho máximo para móvil/desktop */
+    height: auto;
+    display: block;
+  }
+
+  /* ======= STATS ======= */
+  .stats-section {
+    background: linear-gradient(135deg, #0a1a0a, #0d110d);
+    border-top: 1px solid rgba(76,175,46,0.1);
+    border-bottom: 1px solid rgba(76,175,46,0.1);
+    padding: 64px 20px;
+  }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 64px; color: var(--green); line-height: 1; }
+  .stat-label { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 700; letter-spacing: 1px; margin-top: 4px; }
+
+  /* ======= TESTIMONIALS ======= */
+  .reviews-section { padding: 80px 20px; background: #0a0a0a; text-align: center !important; }
+  .reviews-section .section-title { font-size: 56px !important; text-align: center !important; }
+  .reviews-section .section-label { text-align: center !important; display: block !important; }
+  @media(max-width:768px){
+    .reviews-section .section-title { font-size: 48px !important; text-align: center !important; }
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  .section-label {
+    display: inline-block; font-size: 14px !important; letter-spacing: 4px; font-weight: 800;
+    color: var(--green); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif !important;
+    font-size: 120px !important;
+    line-height: 1.0 !important;
+    margin-bottom: 16px;
+  }
+
+  /* Móvil: forzado con !important */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 72px !important;
+      line-height: 1.0 !important;
+    }
+    .hero-headline {
+      font-size: 72px !important;
+      line-height: 0.95 !important;
+    }
+    .hero-sub {
+      font-size: 20px !important;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 769px) {
+    .section-title {
+      font-size: 120px !important;
+    }
+    .hero-headline {
+      font-size: 120px !important;
+    }
+  }
+  .reviews-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 52px; }
+  @media(max-width:600px){
+    .reviews-wrap { grid-template-columns: 1fr; }
+    .review-card { text-align: center; }
+    .reviewer { justify-content: center; }
+    .stars { text-align: center; }
+  }
+  .review-card {
+    background: #0f1a0f; border: 1px solid rgba(76,175,46,0.15);
+    border-radius: 16px; padding: 28px;
+  }
+  .stars { color: var(--gold); font-size: 16px; margin-bottom: 12px; letter-spacing: 2px; }
+  .review-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+  .reviewer { display: flex; align-items: center; gap: 10px; }
+  .reviewer-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-dark), var(--green));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 16px; color: var(--black);
+  }
+  .reviewer-info strong { font-size: 13px; display: block; }
+  .reviewer-info span { font-size: 11px; color: var(--gray); }
+  .verified { color: var(--green); font-size: 11px; font-weight: 700; }
+
+  /* ======= PRICING ======= */
+  .pricing-section { padding: 80px 20px; text-align: center; background: #0d110d; }
+  .pricing-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; margin-top: 52px; max-width: 720px; margin-left: auto; margin-right: auto;
+  }
+  .pricing-card {
+    background: #0f1a0f; border: 1px solid rgba(76,175,46,0.2);
+    border-radius: 20px; padding: 36px 28px; position: relative; transition: transform 0.3s;
+  }
+  .pricing-card:hover { transform: translateY(-4px); }
+  .pricing-card.featured {
+    border-color: var(--green);
+    background: linear-gradient(160deg, #0f1a0f, #152215);
+    box-shadow: 0 0 60px rgba(76,175,46,0.2);
+  }
+  .best-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--green); color: var(--black);
+    font-size: 11px; font-weight: 900; letter-spacing: 2px;
+    padding: 5px 18px; border-radius: 20px;
+  }
+  .card-name { font-weight: 800; font-size: 14px; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; margin-bottom: 8px; }
+  .card-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 16px; }
+  .card-price { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: var(--white); line-height: 1; margin-bottom: 8px; }
+  .card-price sup { font-size: 28px; vertical-align: super; }
+  .card-perks { list-style: none; margin: 20px 0; text-align: left; display: flex; flex-direction: column; gap: 10px; }
+  .card-perks li { font-size: 13px; color: rgba(255,255,255,0.75); display: flex; gap: 8px; align-items: flex-start; }
+  .card-perks li::before { content: '✓'; color: var(--green); font-weight: 900; flex-shrink: 0; }
+  .btn-card {
+    display: block; width: 100%; background: var(--green); color: var(--black);
+    font-weight: 900; font-size: 15px; letter-spacing: 1px; text-transform: uppercase;
+    text-decoration: none; padding: 16px; border-radius: 10px; border: none;
+    cursor: pointer; transition: all 0.3s; box-shadow: 0 6px 24px rgba(76,175,46,0.35); text-align: center;
+  }
+  .btn-card:hover { background: var(--green-glow); transform: translateY(-2px); }
+  .btn-card-outline { background: transparent; border: 1px solid var(--green); color: var(--green); box-shadow: none; }
+  .btn-card-outline:hover { background: rgba(76,175,46,0.1); }
+
+  /* ======= FAQ ======= */
+  .pricing-section .section-title { font-size: 56px !important; text-align: center !important; }
+  @media(max-width:768px){
+    .pricing-section .section-title { font-size: 48px !important; }
+  }
+  .faq-section .section-title { font-size: 56px !important; text-align: center !important; }
+  .faq-section .section-label { text-align: center !important; display: block !important; }
+  @media(max-width:768px){
+    .faq-section .section-title { font-size: 48px !important; text-align: center !important; }
+  }
+  .faq-list { max-width: 680px; margin: 52px auto 0; display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 4px; cursor: pointer; font-weight: 700; font-size: 15px; transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--green); }
+  .faq-arrow { transition: transform 0.3s; font-size: 20px; color: var(--green); }
+  .faq-item.open .faq-arrow { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; padding: 0 4px;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 20px; }
+
+  /* ======= FINAL CTA ======= */
+  .final-cta {
+    text-align: center;
+    background: linear-gradient(160deg, #0a120a, #0f1a0f);
+    padding: 80px 20px;
+    position: relative; overflow: hidden;
+  }
+  .final-cta::before {
+    content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(76,175,46,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .final-cta .section-title { font-size: 56px !important; }
+  .final-cta p { font-size: 15px !important; }
+  @media(max-width:768px){
+    .final-cta .section-title { font-size: 48px !important; }
+  }
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    margin: 28px auto; padding: 16px 28px;
+    background: rgba(76,175,46,0.08); border: 1px solid rgba(76,175,46,0.25);
+    border-radius: 12px; max-width: 440px; font-size: 13px; font-weight: 700;
+  }
+  .guarantee-icon { font-size: 28px; }
+
+  /* ======= FORMULARIO DE PEDIDO ======= */
+  .form-section {
+    background: linear-gradient(160deg, #0a120a, #0f1a0f);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-section::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%;
+    transform: translateX(-50%);
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(76,175,46,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .form-wrap {
+    max-width: 480px;
+    margin: 40px auto 0;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(76,175,46,0.25);
+    border-radius: 20px;
+    padding: 36px 28px;
+    position: relative;
+    z-index: 1;
+  }
+  /* Producto selector */
+  .producto-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .producto-opt {
+    border: 2px solid rgba(76,175,46,0.25);
+    border-radius: 12px;
+    padding: 14px 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+    background: rgba(255,255,255,0.03);
+    text-align: center;
+  }
+  .producto-opt.selected {
+    border-color: var(--green);
+    background: rgba(76,175,46,0.12);
+  }
+  .producto-opt .p-emoji { font-size: 22px; margin-bottom: 4px; }
+  .producto-opt .p-name { font-size: 12px; font-weight: 800; color: var(--white); line-height: 1.3; }
+  .producto-opt .p-price { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--green); margin-top: 4px; }
+  .producto-opt.selected .p-name { color: var(--green); }
+
+  /* Input fields */
+  .form-group { margin-bottom: 14px; text-align: left; }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus { border-color: var(--green); }
+  .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group select option { background: #1a1a1a; color: var(--white); }
+
+  /* Select arrow */
+  .select-wrap { position: relative; }
+  .select-wrap::after {
+    content: '▼';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: var(--green);
+    pointer-events: none;
+  }
+
+  /* Submit button */
+  .btn-submit {
+    display: block; width: 100%;
+    background: linear-gradient(135deg, #4caf2e 0%, #6ee84a 50%, #4caf2e 100%);
+    background-size: 200% 200%;
+    color: var(--black); font-weight: 900; font-size: 17px;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 20px; border-radius: 12px; border: none;
+    cursor: pointer; transition: all 0.3s;
+    animation: shimmer 3s linear infinite;
+    box-shadow: 0 8px 32px rgba(76,175,46,0.4);
+    margin-top: 8px;
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(76,175,46,0.6); }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* Form trust */
+  .form-trust {
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+    margin-top: 16px; font-size: 11px; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+  }
+  .form-trust span { display: flex; align-items: center; gap: 4px; }
+
+  /* Success state */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 20px;
+  }
+  .form-success .success-icon { font-size: 56px; margin-bottom: 16px; }
+  .form-success h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px; color: var(--green); margin-bottom: 8px;
+  }
+  .form-success p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+  /* Form label top */
+  .form-section-label {
+    font-size: 11px; letter-spacing: 4px; font-weight: 800;
+    color: var(--green); text-transform: uppercase; margin-bottom: 12px; display: block;
+  }
+  .form-section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px !important;
+    line-height: 1.0;
+    margin-bottom: 8px;
+  }
+  .form-section-sub {
+    font-size: 15px; color: rgba(255,255,255,0.6); max-width: 400px; margin: 0 auto;
+  }
+  @media(max-width:768px){
+    .form-section-title { font-size: 48px !important; }
+    .form-wrap { padding: 24px 16px; }
+    .producto-selector { grid-template-columns: 1fr 1fr; }
+  }
+    padding: 32px 20px; text-align: center;
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* ======= STICKY BAR ======= */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(10,15,10,0.95); backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(76,175,46,0.3);
+    padding: 12px 20px; display: flex; align-items: center;
+    justify-content: space-between; z-index: 1000;
+    transform: translateY(100%); transition: transform 0.4s; gap: 16px;
+  }
+  .sticky-bar.visible { transform: translateY(0); }
+  .sticky-info { font-size: 13px; }
+  .sticky-info strong { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--green); display: block; line-height: 1; }
+  .sticky-btn {
+    flex-shrink: 0; background: var(--green); color: var(--black);
+    font-weight: 900; font-size: 14px; padding: 12px 24px; border-radius: 8px;
+    border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+  }
+
+  /* ======= ANIMS ======= */
+  @keyframes fadeInDown { from{opacity:0;transform:translateY(-20px);} to{opacity:1;transform:translateY(0);} }
+  @keyframes fadeInUp   { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
+  .reveal { opacity:0; transform:translateY(40px); transition:opacity 0.7s ease,transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* ======= RESPONSIVE ======= */
+  @media(max-width:768px){
+    .pricing-cards { grid-template-columns: 1fr; max-width: 380px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .sticky-bar { flex-direction: column; padding: 16px; gap: 10px; text-align: center; }
+    .sticky-btn { width: 100%; text-align: center; display: block; }
+  }
+</style>
+<!-- ======= META PIXEL ======= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2937373643138468');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'NOVA Shampoo Cubre Canas',
+  currency:     'COP',
+  value:        89500
+});
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2937373643138468&ev=PageView&noscript=1"/>
+</noscript>
+<!-- FIN META PIXEL -->
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="topbar">
+  <span>💳 <strong>PAGO CONTRA ENTREGA</strong> &nbsp;—&nbsp; 🚚 <strong>ENVÍO GRATIS</strong></span>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="social-proof-pill">
+    <span class="dot"></span>
+    +2.400 personas ya cubrieron sus canas con NOVA
+  </div>
+
+  <p class="hero-eyebrow">El shampoo que está cambiando todo</p>
+
+  <h1 class="hero-headline">
+    Cubre tus<br>
+    <span class="accent">canas</span> sin<br>
+    <span class="outline">maltratar</span><br>
+    tu cabello
+  </h1>
+
+  <p class="hero-sub">
+    Renueva tu color <strong>desde casa en minutos</strong> con extractos naturales y máxima cobertura. <strong>Desde el primer lavado.</strong>
+  </p>
+
+  <!-- IMAGEN HERO REAL (pareja + productos) -->
+  <div class="hero-image-wrap">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0978/4475/6759/files/Sin_titulo_753_x_1350_px_753_x_1079_px_602_x_1079_px_602_x_876_px.png?v=1771552324"
+      alt="NOVA Shampoo Cubre Canas – Resultado real desde el primer lavado"
+    />
+  </div>
+
+  <div class="badges-row">
+    <div class="badge"><span class="icon">🌿</span> Extractos Naturales</div>
+    <div class="badge"><span class="icon">⚡</span> Desde el 1er Lavado</div>
+    <div class="badge"><span class="icon">🏠</span> Úsalo en casa</div>
+  </div>
+
+  <div class="color-section">
+    <p class="color-label">Elige tu tono</p>
+    <div class="color-opts">
+      <div class="color-opt active" onclick="selectColor(this)">
+        <div class="color-dot" style="background:#0a0a0a;"></div>
+        <span>Negro</span>
+      </div>
+      <div class="color-opt" onclick="selectColor(this)">
+        <div class="color-dot" style="background:#3b1f0f;"></div>
+        <span>Castaño Oscuro</span>
+      </div>
+      <div class="color-opt" onclick="selectColor(this)">
+        <div class="color-dot" style="background:#7b4527;"></div>
+        <span>Castaño Claro</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="price-tag">
+      <p class="price-label">Kit Completo – Shampoo + Mascarilla</p>
+      <div class="price-main"><span class="currency">$</span>89.500</div>
+      <p class="price-desc">o solo el Shampoo por <strong>$69.500</strong></p>
+    </div>
+    <a href="javascript:void(0)" onclick="pedirAhora()" class="btn-primary">
+      ¡QUIERO MI KIT NOVA AHORA! <span class="btn-arrow">→</span>
+    </a>
+    <a href="javascript:void(0)" onclick="pedirAhora()" class="btn-secondary">
+      Ver solo el Shampoo → $69.500
+    </a>
+    <div class="trust-strip">
+      <span>🚚 <em>Envío Gratis</em></span>
+      <span>🛡️ <em>Pago Contra Entrega</em></span>
+      <span>⭐ <em>5 Estrellas</em></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== IMAGEN: PROBLEMA / PUBLICIDAD ===================== -->
+<!-- Reemplaza la sección problema/solución con imagen de campaña -->
+<div class="img-section reveal">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0978/4475/6759/files/freepik__usa-imagen-img1-ultrarealistic-dark-advertising-ba__43068.png?v=1771456271"
+    alt="NOVA – Publicidad campaña"
+  />
+</div>
+
+<!-- ===================== STATS ===================== -->
+<div class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal">
+        <div class="stat-num">+2.400</div>
+        <p class="stat-label">Clientes satisfechos</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-num">98%</div>
+        <p class="stat-label">Recomienda NOVA</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-num">1er</div>
+        <p class="stat-label">Lavado con resultados</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-num">4.9★</div>
+        <p class="stat-label">Calificación promedio</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== IMAGEN: CÓMO FUNCIONA (3 pasos) ===================== -->
+<div class="img-section reveal">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0978/4475/6759/files/Sin_titulo_753_x_1350_px_753_x_1079_px.png?v=1771458763"
+    alt="NOVA – Cómo funciona: 3 pasos fáciles"
+  />
+</div>
+
+<!-- ===================== IMAGEN: POR QUÉ NOVA (beneficios) ===================== -->
+<div class="img-section reveal">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0978/4475/6759/files/Sin_titulo_753_x_1350_px_1.png?v=1771459771"
+    alt="NOVA – Por qué NOVA: beneficios reales"
+  />
+</div>
+
+<!-- ===================== TESTIMONIOS ===================== -->
+<section class="reviews-section">
+  <div class="container">
+    <p class="section-label reveal">Testimonios</p>
+    <h2 class="section-title reveal">Lo que dicen<br>nuestros clientes</h2>
+
+    <div class="reviews-wrap">
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Llevo 3 semanas usando el kit y mis canas desaparecieron. Lo mejor es que mi cabello se siente increíblemente suave, no dañado como con las tinturas normales. ¡Seguiré comprando!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">M</div>
+          <div class="reviewer-info">
+            <strong>María C.</strong>
+            <span>Bogotá · <span class="verified">✓ Compra verificada</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Soy hombre y tenía mucha desconfianza. Lo probé y ¡wow! Desde el segundo lavado noté la diferencia. Mis canas quedaron cubiertas sin que se vea artificial. Lo recomiendo totalmente."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">J</div>
+          <div class="reviewer-info">
+            <strong>Jorge M.</strong>
+            <span>Medellín · <span class="verified">✓ Compra verificada</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"El pago contra entrega me dio confianza para pedirlo. Llegó rápido y el resultado superó mis expectativas. La mascarilla es deliciosa, deja el cabello como de salón. ¡5 estrellas merecidas!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">C</div>
+          <div class="reviewer-info">
+            <strong>Claudia R.</strong>
+            <span>Cali · <span class="verified">✓ Compra verificada</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <p class="section-label reveal">Elige tu opción</p>
+    <h2 class="section-title reveal">Invierte en tu<br><span style="color:var(--green)">confianza</span></h2>
+    <p class="reveal" style="color:rgba(255,255,255,0.6);font-size:15px;margin:0 auto;">Envío gratis y pago contra entrega en ambas opciones.</p>
+
+    <div class="pricing-cards">
+      <div class="pricing-card reveal">
+        <p class="card-name">Solo el Shampoo</p>
+        <p class="card-title">Shampoo Cubre Canas</p>
+        <div class="card-price"><sup>$</sup>69.500</div>
+        <ul class="card-perks">
+          <li>NOVA Shampoo Cubre Canas 375ml</li>
+          <li>Máxima cobertura desde el 1er lavado</li>
+          <li>3 tonos disponibles</li>
+          <li>Con extractos naturales</li>
+          <li>Envío gratis</li>
+          <li>Pago contra entrega</li>
+        </ul>
+        <a href="javascript:void(0)" onclick="pedirAhora()" class="btn-card btn-card-outline">Pedir Shampoo</a>
+      </div>
+
+      <div class="pricing-card featured reveal">
+        <span class="best-badge">⭐ MÁS POPULAR</span>
+        <p class="card-name">Kit Completo</p>
+        <p class="card-title">Shampoo + Mascarilla</p>
+        <div class="card-price"><sup>$</sup>89.500</div>
+        <ul class="card-perks">
+          <li>NOVA Shampoo Cubre Canas 375ml</li>
+          <li>NOVA Mascarilla Nutritiva 200ml</li>
+          <li>Resultados 2x más rápidos</li>
+          <li>Cabello nutrido y brillante</li>
+          <li>3 tonos disponibles</li>
+          <li>Envío gratis prioritario</li>
+          <li>Pago contra entrega</li>
+        </ul>
+        <a href="javascript:void(0)" onclick="pedirAhora()" class="btn-card">¡Quiero el Kit Completo!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FORMULARIO DE PEDIDO ===================== -->
+<section class="form-section" id="order">
+  <span class="form-section-label reveal">Haz tu pedido</span>
+  <h2 class="form-section-title reveal">Pide ahora,<br><span style="color:var(--green)">paga al recibirlo</span></h2>
+  <p class="form-section-sub reveal">Llena el formulario en menos de 1 minuto y te contactamos para confirmar.</p>
+
+  <div class="form-wrap reveal">
+
+    <!-- ESTADO ÉXITO -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">🎉</div>
+      <h3>¡Pedido recibido!</h3>
+      <p>Gracias, en breve te contactamos por WhatsApp para confirmar tu pedido y coordinar la entrega.</p>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div id="formBody">
+
+      <!-- PASO 1: Elige producto -->
+      <p style="font-size:12px;font-weight:800;letter-spacing:1.5px;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;text-align:left;">¿Qué quieres pedir?</p>
+      <div class="producto-selector" id="productoSelector">
+        <div class="producto-opt selected" onclick="selectProducto(this, 'Kit Completo – Shampoo + Mascarilla', '89500')">
+          <div class="p-emoji">🧴🫙</div>
+          <div class="p-name">Kit Completo<br>Shampoo + Mascarilla</div>
+          <div class="p-price">$89.500</div>
+        </div>
+        <div class="producto-opt" onclick="selectProducto(this, 'Solo Shampoo Cubre Canas', '69500')">
+          <div class="p-emoji">🧴</div>
+          <div class="p-name">Solo Shampoo<br>Cubre Canas</div>
+          <div class="p-price">$69.500</div>
+        </div>
+      </div>
+
+      <!-- CAMPOS -->
+      <div class="form-group">
+        <label>Nombre y Apellido</label>
+        <input type="text" id="f_nombre" placeholder="Ej: Carlos Ramírez" autocomplete="name" />
+      </div>
+
+      <div class="form-group">
+        <label>Celular WhatsApp</label>
+        <input type="tel" id="f_celular" placeholder="Ej: 3001234567" autocomplete="tel" inputmode="numeric" />
+      </div>
+
+      <div class="form-group">
+        <label>Departamento</label>
+        <div class="select-wrap">
+          <select id="f_ciudad">
+            <option value="">— Selecciona tu departamento —</option>
+            <option>Amazonas</option>
+            <option>Antioquia</option>
+            <option>Arauca</option>
+            <option>Atlántico</option>
+            <option>Bolívar</option>
+            <option>Boyacá</option>
+            <option>Caldas</option>
+            <option>Caquetá</option>
+            <option>Casanare</option>
+            <option>Cauca</option>
+            <option>Cesar</option>
+            <option>Chocó</option>
+            <option>Córdoba</option>
+            <option>Cundinamarca</option>
+            <option>Guainía</option>
+            <option>Guaviare</option>
+            <option>Huila</option>
+            <option>La Guajira</option>
+            <option>Magdalena</option>
+            <option>Meta</option>
+            <option>Nariño</option>
+            <option>Norte de Santander</option>
+            <option>Putumayo</option>
+            <option>Quindío</option>
+            <option>Risaralda</option>
+            <option>San Andrés y Providencia</option>
+            <option>Santander</option>
+            <option>Sucre</option>
+            <option>Tolima</option>
+            <option>Valle del Cauca</option>
+            <option>Vaupés</option>
+            <option>Vichada</option>
+            <option>Bogotá D.C.</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Ciudad o Municipio</label>
+        <input type="text" id="f_municipio" placeholder="Ej: Medellín, Bello, Itagüí..." autocomplete="address-level2" />
+      </div>
+
+      <div class="form-group">
+        <label>Dirección de entrega</label>
+        <input type="text" id="f_direccion" placeholder="Ej: Cra 15 #32-10, Apto 201" autocomplete="street-address" />
+      </div>
+
+      <!-- INPUT OCULTO producto -->
+      <input type="hidden" id="f_producto" value="Kit Completo – Shampoo + Mascarilla" />
+      <input type="hidden" id="f_precio" value="89500" />
+
+      <button class="btn-submit" id="btnSubmit" onclick="enviarPedido()">
+        ✅ CONFIRMAR MI PEDIDO →
+      </button>
+
+      <div class="form-trust">
+        <span>🔒 Datos seguros</span>
+        <span>💳 Paga al recibirlo</span>
+        <span>🚚 Envío gratis</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq-section">
+  <div class="container" style="text-align:center;">
+    <p class="section-label reveal">Preguntas frecuentes</p>
+    <h2 class="section-title reveal">¿Tienes dudas?</h2>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">¿Desde cuándo veré resultados?<span class="faq-arrow">+</span></div>
+        <p class="faq-a">La mayoría de nuestros clientes notan cobertura visible desde el primer o segundo lavado. Para un resultado completo y uniforme, recomendamos usarlo de manera consistente durante las primeras dos semanas.</p>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">¿Es seguro para cabello tratado o teñido?<span class="faq-arrow">+</span></div>
+        <p class="faq-a">Sí. La fórmula con extractos naturales es suave y compatible con cabello previamente tratado, teñido o con permanente. De hecho, ayuda a mejorar la salud capilar con cada uso.</p>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona el pago contra entrega?<span class="faq-arrow">+</span></div>
+        <p class="faq-a">Muy fácil: haces tu pedido, nosotros lo enviamos, y pagas en efectivo cuando el mensajero te entregue el producto en tu puerta. Sin tarjetas, sin adelantos.</p>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo dura el efecto?<span class="faq-arrow">+</span></div>
+        <p class="faq-a">El color se mantiene mientras uses NOVA regularmente. Al ser un tratamiento progresivo y de mantenimiento, entre más constante seas, mejor y más duradero será el resultado.</p>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">¿Qué tono debo elegir?<span class="faq-arrow">+</span></div>
+        <p class="faq-a">Te recomendamos elegir el tono más cercano a tu color natural de cabello. Si tienes un color entre dos opciones, escoge el más oscuro para una cobertura más completa y natural.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta">
+  <p class="section-label reveal">No esperes más</p>
+  <h2 class="section-title reveal">Tu cabello<br>te lo <span style="color:var(--green)">agradecerá</span></h2>
+  <p class="reveal" style="color:rgba(255,255,255,0.6);font-size:15px;margin:0 auto 32px;max-width:480px;">+2.400 personas ya transformaron sus canas con NOVA. Hoy es tu turno.</p>
+
+  <div class="guarantee-strip reveal">
+    <span class="guarantee-icon">🛡️</span>
+    <span><strong>100% Confianza</strong> · Pago Contra Entrega · Envío Gratis</span>
+  </div>
+
+  <div style="max-width:420px;margin:0 auto;" class="reveal">
+    <a href="javascript:void(0)" onclick="pedirAhora()" class="btn-primary" style="font-size:20px;padding:22px;">
+      ¡PEDIR MI KIT NOVA AHORA! <span class="btn-arrow">→</span>
+    </a>
+    <p style="margin-top:16px;font-size:12px;color:var(--gray);">
+      🚚 Envío gratis a todo el país &nbsp;|&nbsp; ⭐ 4.9/5 de más de 2.400 clientes
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 NOVA Cubre Canas. Todos los derechos reservados.</p>
+  <p style="margin-top:6px;">Los resultados pueden variar. Para uso externo. No ingerir.</p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-info">
+    <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:700;">KIT COMPLETO</span>
+    <strong>$89.500 · Envío Gratis</strong>
+    <span style="font-size:11px;color:var(--gray);">Pago contra entrega disponible</span>
+  </div>
+  <a href="javascript:void(0)" onclick="pedirAhora()" class="sticky-btn">Pedir Ahora →</a>
+</div>
+
+<script>
+  // =============================================
+  // GOOGLE SHEETS URL
+  // Reemplaza esta URL con la que obtengas de
+  // tu Google Apps Script al publicarlo
+  // =============================================
+  var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwnmrw74bD7Bb-X2NlJpsFj2M3TANsvKfR-Z-xUvothrFAdSnwQ7vzg3m2hk985HuD0/exec';
+
+  // =============================================
+  // SELECCIONAR PRODUCTO
+  // =============================================
+  function selectProducto(el, nombre, precio) {
+    document.querySelectorAll('.producto-opt').forEach(function(o){ o.classList.remove('selected'); });
+    el.classList.add('selected');
+    document.getElementById('f_producto').value = nombre;
+    document.getElementById('f_precio').value = precio;
+  }
+
+  // =============================================
+  // ENVIAR PEDIDO A GOOGLE SHEETS
+  // =============================================
+  function enviarPedido() {
+    var nombre    = document.getElementById('f_nombre').value.trim();
+    var celular   = document.getElementById('f_celular').value.trim();
+    var ciudad    = document.getElementById('f_ciudad').value;
+    var municipio = document.getElementById('f_municipio').value.trim();
+    var direccion = document.getElementById('f_direccion').value.trim();
+    var producto  = document.getElementById('f_producto').value;
+    var precio    = document.getElementById('f_precio').value;
+
+    // Validación
+    if (!nombre)    { alert('Por favor ingresa tu nombre y apellido.'); return; }
+    if (!celular || celular.length < 7) { alert('Por favor ingresa tu celular WhatsApp.'); return; }
+    if (!ciudad)    { alert('Por favor selecciona tu departamento.'); return; }
+    if (!municipio) { alert('Por favor ingresa tu ciudad o municipio.'); return; }
+    if (!direccion) { alert('Por favor ingresa tu dirección de entrega.'); return; }
+
+    // Bloquear botón
+    var btn = document.getElementById('btnSubmit');
+    btn.disabled = true;
+    btn.textContent = 'Enviando pedido...';
+
+    // Fecha y hora
+    var ahora = new Date();
+    var fecha = ahora.toLocaleDateString('es-CO') + ' ' + ahora.toLocaleTimeString('es-CO');
+
+    // Datos a enviar
+    var datos = {
+      fecha:     fecha,
+      nombre:    nombre,
+      celular:   celular,
+      ciudad:    ciudad,
+      direccion: direccion,
+      producto:  producto,
+      precio:    '$' + parseInt(precio).toLocaleString('es-CO'),
+      estado:    'Pendiente'
+    };
+
+    // Enviar a Google Sheets via GET (más confiable con Apps Script)
+    var params = new URLSearchParams({
+      fecha:      fecha,
+      nombre:     nombre,
+      celular:    celular,
+      ciudad:     ciudad + ' – ' + municipio,
+      direccion:  direccion,
+      producto:   producto,
+      precio:     '$' + parseInt(precio).toLocaleString('es-CO'),
+      estado:     'Pendiente'
+    });
+
+    var img = new Image();
+    img.src = SHEETS_URL + '?' + params.toString();
+    img.onload  = function() { mostrarExito(); };
+    img.onerror = function() { mostrarExito(); };
+  }
+
+  function mostrarExito() {
+    // =============================================
+    // META PIXEL – EVENTO PURCHASE
+    // Se dispara cuando el cliente envía el pedido
+    // =============================================
+    try {
+      var precio   = document.getElementById('f_precio').value;
+      var producto = document.getElementById('f_producto').value;
+      fbq('track', 'Purchase', {
+        value:        parseFloat(precio),
+        currency:     'COP',
+        content_name: producto,
+        content_type: 'product'
+      });
+    } catch(err) {}
+
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // =============================================
+  // TODOS LOS BOTONES CTA → scroll al formulario
+  // =============================================
+  function pedirAhora() {
+    var form = document.getElementById('order');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // =============================================
+  // FAQ toggle
+  // =============================================
+  function toggleFaq(el) {
+    var item = el.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // =============================================
+  // Color selector hero
+  // =============================================
+  function selectColor(el) {
+    document.querySelectorAll('.color-opt').forEach(function(o){ o.classList.remove('active'); });
+    el.classList.add('active');
+  }
+
+  // =============================================
+  // Scroll reveal
+  // =============================================
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+
+  // =============================================
+  // Sticky bar
+  // =============================================
+  var sticky = document.getElementById('stickyBar');
+  window.addEventListener('scroll', function(){
+    sticky.classList.toggle('visible', window.scrollY > 600);
+  });
+</script>
+</body>
+</html>
